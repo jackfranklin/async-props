@@ -25,9 +25,14 @@ module.exports = {
   ],
 
   module: {
-    loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel?stage=0&loose=all' }
-    ]
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'stage-0', 'react']
+      }
+    }]
   },
 
   node: {
